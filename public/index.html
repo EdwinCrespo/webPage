@@ -85,6 +85,8 @@
                 -moz-background-attachment: scroll;
                 -o-background-attachment: scroll;
                 height: 200px;
+                background-position: center center;
+                background-size: cover;
             }
         }
 
@@ -442,6 +444,7 @@
             once: true
         });
 
+        // Contador existente
         document.addEventListener('DOMContentLoaded', async () => {
             const counterButton = document.getElementById('counterButton');
             const counterDisplay = document.getElementById('counter');
