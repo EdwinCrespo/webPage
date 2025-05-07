@@ -76,6 +76,7 @@
             -webkit-background-attachment: fixed;
             -moz-background-attachment: fixed;
             -o-background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         @media (max-width: 768px) {
@@ -89,6 +90,8 @@
                 background-size: cover;
                 transform: translateZ(0);
                 -webkit-transform: translateZ(0);
+                background-repeat: no-repeat;
+                overflow: hidden;
             }
         }
 
@@ -453,15 +456,15 @@
             
             if (isMobile) {
                 let lastScrollY = window.scrollY;
+                let currentPosition = 0;
                 
                 function updateMobileParallax() {
                     const currentScrollY = window.scrollY;
                     const scrollDiff = currentScrollY - lastScrollY;
                     
                     if (dividerSection) {
-                        const currentPosition = parseFloat(dividerSection.style.backgroundPositionY || '0');
-                        const newPosition = currentPosition + (scrollDiff * 0.2);
-                        dividerSection.style.backgroundPositionY = newPosition + 'px';
+                        currentPosition = Math.max(-100, Math.min(100, currentPosition + (scrollDiff * 0.2)));
+                        dividerSection.style.backgroundPositionY = currentPosition + 'px';
                     }
                     
                     lastScrollY = currentScrollY;
