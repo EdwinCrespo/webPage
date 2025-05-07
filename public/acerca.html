@@ -152,6 +152,19 @@
             background-attachment: fixed;
             height: 300px;
             position: relative;
+            -webkit-background-attachment: fixed;
+            -moz-background-attachment: fixed;
+            -o-background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .divider-section {
+                background-attachment: scroll;
+                -webkit-background-attachment: scroll;
+                -moz-background-attachment: scroll;
+                -o-background-attachment: scroll;
+                height: 200px;
+            }
         }
 
         .divider-section::before {
