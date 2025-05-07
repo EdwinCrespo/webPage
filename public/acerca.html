@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - Aurora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #E5A4C2;
+            --secondary: #A7C5EB;
+            --support: #F6E7D7;
+            --light: #FFF5F9;
+            --dark: #4E4B59;
+            --accent: #FF8C8C;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .navbar {
+            background: #FFFFFF !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .navbar .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .navbar .nav-link.active {
+            color: var(--primary);
+        }
+
+        .navbar-toggler {
+            border-color: var(--dark);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(78, 75, 89, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .story-section {
+            background-color: var(--support);
+            padding: 80px 0;
+        }
+
+        .mission-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .btn-primary {
+            background: #FF8C8C !important;
+            border: none !important;
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 140, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ff7a7a !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 140, 0.4);
+        }
+
+        .quote-box {
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 30px 0;
+            background-color: white;
+        }
+
+        .container-fluid {
+            padding-left: 0;
+        }
+
+        .navbar-brand {
+            padding: 0;
+            margin-right: 0;
+        }
+
+        .logo-img {
+            height: 150px;
+            width: auto;
+            transition: transform 0.3s ease;
+            margin-left: 0;
+        }
+
+        @media (max-width: 991.98px) {
+            .logo-img {
+                height: 150px;
+            }
+            .navbar .nav-link {
+                font-size: 1rem;
+                padding: 0.5rem 0;
+            }
+            .navbar-collapse {
+                background: #FFFFFF;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-img {
+                height: 50px;
+            }
+        }
+
+        .divider-section {
+            background: url('images/image3.PNG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 300px;
+            position: relative;
+        }
+
+        .divider-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(229, 164, 194, 0.8) 0%, rgba(167, 197, 235, 0.8) 100%);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo8.PNG" alt="Aurora Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="acerca.html">Acerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h1 class="display-4 mb-4">Nuestra Historia</h1>
+                    <p class="lead">Tres mujeres, tres países, una misión común</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="quote-box">
+                        <p class="lead">"Somos Valentina, Lia Daniela y Diana, tres mujeres de Argentina, Bolivia y México, con historias distintas pero una herida en común."</p>
+                    </div>
+                    <p class="lead" style="text-align: justify;">Las tres hemos vivido en carne propia lo que es atravesar un trastorno de la conducta alimentaria. Sabemos de lo que se esconde detrás de una sonrisa, del miedo, la culpa, y la soledad. También lo viven y han vivido nuestros seres más queridos. Y por eso nace Aurora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="divider-section"></section>
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Nuestra Misión</h2>
+                    <p class="lead mb-5">No es solo un proyecto. Es una forma de decir: "yo también estuve ahí, y no quiero que nadie más lo pase en silencio".</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="team-member">
+                                <h3>Comunidad</h3>
+                                <p>Construir una comunidad real, humana, donde todos puedan sentirse seguros y comprendidos.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="team-member">
+                                <h3>Apoyo</h3>
+                                <p>Donde hablar no sea una amenaza, sino un alivio. Donde puedas volver a conectar con los demás y contigo mismo.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="team-member">
+                                <h3>Esperanza</h3>
+                                <p>Porque no estás solo/a, y porque SI es posible salir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4" style="background-color: var(--dark); color: white;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Aurora. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html> 

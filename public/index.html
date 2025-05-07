@@ -5,26 +5,325 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora - Cuidamos tu camino hacia la recuperación</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #E5A4C2;
+            --secondary: #A7C5EB;
+            --support: #F6E7D7;
+            --light: #FFF5F9;
+            --dark: #4E4B59;
+            --accent: #FF8C8C;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            background: #FFFFFF !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .container-fluid {
+            padding-left: 0;
+        }
+
+        .navbar-brand {
+            padding: 0;
+            margin-right: 0;
+        }
+
+        .navbar .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .navbar .nav-link.active {
+            color: var(--primary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 120px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .divider-section {
+            background: url('images/image3.PNG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 300px;
+            position: relative;
+        }
+
+        .divider-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(229, 164, 194, 0.8) 0%, rgba(167, 197, 235, 0.8) 100%);
+        }
+
+        .content-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .highlight-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .highlight-box img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-box:hover img {
+            transform: scale(1.02);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--support);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: #FF8C8C !important;
+            border: none !important;
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 140, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ff7a7a !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 140, 0.4);
+        }
+
+        .counter-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .counter-text {
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        #counter {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+        }
+
+        .hero-image-container {
+            position: relative;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 55%;
+        }
+
+        .hero-image {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .logo-img {
+          /*  height: 80px;*/
+            height: 150px;
+            width: auto;
+            transition: transform 0.3s ease;
+            margin-left: 0;
+        }
+
+        .navbar-brand:hover .logo-img {
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border-color: var(--dark);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(78, 75, 89, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-section {
+                text-align: center;
+            }
+            .hero-image-container {
+                margin: 40px auto 0;
+            }
+            .highlight-box img {
+                margin-top: 30px;
+            }
+            .logo-img {
+                /*height: 60px;*/
+                height: 150px;
+            }
+            .navbar .nav-link {
+                font-size: 1rem;
+                padding: 0.5rem 0;
+            }
+            .navbar-collapse {
+                background: #FFFFFF;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-img {
+                height: 60px;
+            }
+        }
+
+        .service-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-box h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-box p {
+            color: var(--dark);
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--dark);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">🌸 Aurora</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo8.PNG" alt="Aurora Logo" class="logo-img">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inicio</a>
+                        <a class="nav-link active" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca</a>
+                        <a class="nav-link" href="acerca.html">Acerca</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -33,10 +332,15 @@
 
     <section class="hero-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="hero-title">Cuidamos tu camino hacia la recuperación</h1>
-                    <p class="hero-subtitle">No estás sola en este viaje. Y no tenés que enfrentarlo sin apoyo.</p>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-5 text-center" data-aos="fade-right">
+                    <h1 class="display-4 mb-4">Cuidamos tu camino hacia la recuperación</h1>
+                    <p class="lead">No estás sola en este viaje. Y no tenés que enfrentarlo sin apoyo.</p>
+                </div>
+                <div class="col-lg-7 text-center" data-aos="fade-left">
+                    <div class="hero-image-container">
+                        <img src="images/image4.PNG" alt="Aurora - Cuidamos tu camino" class="img-fluid hero-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,28 +350,60 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="content-section">
-                    <div class="highlight-box">
-                        <p>En Aurora creemos que toda mujer merece un espacio seguro, comprensivo y accesible para sanar. Porque entendemos que los Trastornos de la Conducta Alimentaria (TCA) no se combaten con fuerza de voluntad, sino con acompañamiento humano, herramientas adecuadas y comunidad.</p>
-                        <!-- <p class="mt-3"><strong>Ese es nuestro POR QUÉ.</strong></p> -->
+                    <div class="highlight-box" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-6" style="text-align: justify;">
+                                <p>En Aurora creemos que toda mujer merece un espacio seguro, comprensivo y accesible para sanar. Porque entendemos que los Trastornos de la Conducta Alimentaria (TCA) no se combaten con fuerza de voluntad, sino con acompañamiento humano, herramientas adecuadas y comunidad.</p>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in">
+                                <img src="images/image2.PNG" alt="Aurora - Comunidad" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
                     </div>
 
-                    <h2 class="section-title">🛠 ¿Cómo lo hacemos?</h2>
-                    <p>Diseñamos una plataforma que combina tecnología empática, guía profesional y espacios compartidos. Al iniciar, realizás una evaluación sencilla para conocerte mejor y ayudarte con lo que realmente necesitás.</p>
-                   <!-- <p class="mt-3"><strong>Ese es nuestro CÓMO.</strong></p> -->
+                    <h2 class="section-title" data-aos="fade-up">Nuestro Enfoque</h2>
+                    <p data-aos="fade-up" data-aos-delay="100" style="text-align: justify;">Diseñamos una plataforma que combina tecnología empática, guía profesional y espacios compartidos. Al iniciar, realizás una evaluación personalizada para conocerte mejor y ayudarte con lo que realmente necesitás.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-                    <h2 class="section-title">💠 ¿Qué vas a encontrar en Aurora?</h2>
-                    <ul class="feature-list">
-                        <li>Actividades de bienestar y autocuidado</li>
-                        <li>Contenido educativo que te acompaña paso a paso</li>
-                        <li>Caminatas y encuentros con otras mujeres que entienden tu historia</li>
-                        <li>Un botón de ayuda en caso de emergencia</li>
-                        <li>Sesiones virtuales con especialistas en TCA</li>
-                    </ul>
-                    <p>Todo dentro de un entorno respetuoso, humano y adaptado a tu ritmo.</p>
-                    <!-- <p class="mt-3"><strong>Ese es nuestro QUÉ.</strong></p> -->
+    <section class="divider-section"></section>
 
-                    <div class="text-center mt-5">
-                        <p class="lead">✨ Cada historia es única. Cada acompañamiento también.</p>
+    <main class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-section">
+                    <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-box">
+                                <h3>Bienestar y Autocuidado</h3>
+                                <p>Actividades diseñadas para promover tu bienestar integral y desarrollo personal.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="service-box">
+                                <h3>Contenido Educativo</h3>
+                                <p>Recursos y materiales que te acompañan paso a paso en tu proceso de recuperación.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="service-box">
+                                <h3>Comunidad de Apoyo</h3>
+                                <p>Encuentros y caminatas con otras mujeres que entienden y comparten tu experiencia.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                            <div class="service-box">
+                                <h3>Atención Profesional</h3>
+                                <p>Sesiones virtuales con especialistas en TCA y un botón de ayuda para emergencias.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="600">
+                        <p class="lead">Cada historia es única. Cada acompañamiento también.</p>
                         <p class="mb-4">¿Te gustaría saber más y caminar junto a nosotras?</p>
                         <div class="counter-container">
                             <button id="counterButton" class="btn btn-primary btn-lg">Quiero saber más</button>
@@ -81,17 +417,22 @@
 
     <footer>
         <div class="container text-center">
-            <p class="mb-0">&copy; 2024 Aurora. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2025 Aurora. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
         document.addEventListener('DOMContentLoaded', async () => {
             const counterButton = document.getElementById('counterButton');
             const counterDisplay = document.getElementById('counter');
             
-            // Cargar el contador inicial
             try {
                 const response = await fetch('/api/counter');
                 const data = await response.json();
@@ -100,7 +441,6 @@
                 console.error('Error al cargar el contador:', error);
             }
             
-            // Manejar el clic en el botón
             counterButton.addEventListener('click', async () => {
                 try {
                     const response = await fetch('/api/counter/increment', {
@@ -109,7 +449,6 @@
                     const data = await response.json();
                     counterDisplay.textContent = data.count;
                     
-                    // Efecto visual al hacer clic
                     counterButton.classList.add('clicked');
                     setTimeout(() => {
                         counterButton.classList.remove('clicked');
