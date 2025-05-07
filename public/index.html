@@ -87,6 +87,8 @@
                 height: 200px;
                 background-position: center center;
                 background-size: cover;
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
             }
         }
 
@@ -442,6 +444,32 @@
         AOS.init({
             duration: 1000,
             once: true
+        });
+
+        // Detección de dispositivo móvil y efecto parallax
+        document.addEventListener('DOMContentLoaded', function() {
+            const dividerSection = document.querySelector('.divider-section');
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                let lastScrollY = window.scrollY;
+                
+                function updateMobileParallax() {
+                    const currentScrollY = window.scrollY;
+                    const scrollDiff = currentScrollY - lastScrollY;
+                    
+                    if (dividerSection) {
+                        const currentPosition = parseFloat(dividerSection.style.backgroundPositionY || '0');
+                        const newPosition = currentPosition + (scrollDiff * 0.2);
+                        dividerSection.style.backgroundPositionY = newPosition + 'px';
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                }
+
+                window.addEventListener('scroll', updateMobileParallax);
+                window.addEventListener('resize', updateMobileParallax);
+            }
         });
 
         // Contador existente
